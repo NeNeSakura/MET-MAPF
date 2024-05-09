@@ -1,0 +1,139 @@
+# ./.tmuxinator.yml
+
+name: ART-MAPF
+# root: ~/
+root: <%= @settings["workspace"] %>
+
+# Optional tmux socket
+# socket_name: foo
+
+# Note that the pre and post options have been deprecated and will be replaced by
+# project hooks.
+
+# Project hooks
+# Runs on project start, always
+# on_project_start: command
+# Run on project start, the first time
+# on_project_first_start: command
+# Run on project start, after the first time
+# on_project_restart: command
+# Run on project exit ( detaching from tmux session )
+# on_project_exit: command
+# Run on project stop
+# on_project_stop: command
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+pre_window: conda activate MAPF
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: editor
+
+# Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
+# startup_pane: 1
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# demo~
+# windows:
+#   - editor:
+#       layout: main-vertical
+#       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+#       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+#       # synchronize: after
+#       panes:
+#         - vim
+#         - guard
+#   - server: bundle exec rails s
+#   - logs: tail -f log/development.log
+
+windows:
+  - Random-0:
+      layout: tiled
+      panes:
+        - sleep 1s && <%= @settings["program"] %> --verbose
+        - sleep 2s && <%= @settings["program"] %> --verbose
+        - sleep 3s && <%= @settings["program"] %>
+        - sleep 4s && <%= @settings["program"] %>
+  - Random-1:
+      layout: tiled
+      panes:
+        - sleep 5s && <%= @settings["program"] %> --verbose
+        - sleep 6s && <%= @settings["program"] %> --verbose
+        - sleep 7s && <%= @settings["program"] %>
+        - sleep 8s && <%= @settings["program"] %>
+  - Random-2:
+      layout: tiled
+      panes:
+        - sleep 9s && <%= @settings["program"] %> --verbose
+        - sleep 10s && <%= @settings["program"] %> --verbose
+
+#        - sleep 11s && <%= @settings["program"] %>
+#        - sleep 12s && <%= @settings["program"] %>
+#  - Random-3:
+#      layout: tiled
+#      panes:
+#        - sleep 13s && <%= @settings["program"] %> --verbose
+#        - sleep 14s && <%= @settings["program"] %> --verbose
+#        - sleep 15s && <%= @settings["program"] %>
+#        - sleep 16s && <%= @settings["program"] %>
+#  - Random-4:
+#      layout: tiled
+#      panes:
+#        - sleep 17s && <%= @settings["program"] %> --verbose
+#        - sleep 18s && <%= @settings["program"] %> --verbose
+#        - sleep 19s && <%= @settings["program"] %>
+#        - sleep 20s && <%= @settings["program"] %>
+#  - Random-5:
+#      layout: tiled
+#      panes:
+#        - sleep 21s && <%= @settings["program"] %> --verbose
+#        - sleep 22s && <%= @settings["program"] %> --verbose
+#        - sleep 23s && <%= @settings["program"] %>
+#        - sleep 24s && <%= @settings["program"] %>
+#  - Random-6:
+#      layout: tiled
+#      panes:
+#        - sleep 25s && <%= @settings["program"] %> --verbose
+#        - sleep 26s && <%= @settings["program"] %> --verbose
+#        - sleep 27s && <%= @settings["program"] %>
+#        - sleep 28s && <%= @settings["program"] %>
+#  - Random-7:
+#      layout: tiled
+#      panes:
+#        - sleep 29s && <%= @settings["program"] %> --verbose
+#        - sleep 30s && <%= @settings["program"] %> --verbose
+
+    
+  
+# windows:
+#   - status_things:
+#       layout: main-horizontal
+#       panes:
+#         - top
+#         - uptime
+#         - whoami
+#   - io_things:
+#       layout: tiled
+#       panes:
+#         - lsof
+#         - iostat -w 10
+#         - netstat
+#         - vim
+#   - more_things:
+#       layout: main-vertical
+#       panes:
+#         - is_my_machine_alive:
+#           - ping localhost
+#         - run_several_commands:
+#           - cd /
+#           - cd var
+#           - cd log
+#           - ls

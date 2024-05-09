@@ -1,0 +1,7 @@
+.DS_Store
+/build/
+/instances/toy.txt
+.idea/
+cmake-build-debug/
+*/.idea/
+.vscode/

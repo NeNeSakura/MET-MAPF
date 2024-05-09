@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.15)
+
+project(MetaorphicTestingFramework)
+set(CMAKE_CXX_STANDARD 14)
+#set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Debug)
+
+
+add_subdirectory(MT-Framework)
+add_subdirectory(RandomTesting)
+#add_subdirectory(RandomSeedGeneration4MT)
+add_subdirectory(MetamorphicTesting)
+add_subdirectory(mem_pool)
+#add_subdirectory(MetamorphicTestingDemo)
+#add_subdirectory(MetamorphicTestingDebug)
+#add_subdirectory(MetamorphicTestingDebug1)
+add_subdirectory(ChangeViolationThreshold)
+#add_subdirectory(HelloWorld)
+add_subdirectory(AdaptiveRandomTesting)
+#add_subdirectory(ART-Framework)
