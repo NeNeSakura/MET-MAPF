@@ -9,7 +9,7 @@
                                                                                 
 ---
 
-23.08.2023
+May 9, 2024
 
 ---
 
@@ -37,19 +37,8 @@ The code has been tested through Ubuntu 20.04 and Manjaro 21.3.1 .
    - ART: The application of Adaptive Random Testing
    - DataAnalysisScript: The python scripts for data collection and analysis.
    - 3rdParty: Some open-source libraries supporting the MT-Framework (can be cloned from github).
-- pibt2: The System Under Test (SUT), which is provided by a recent work:
-```
-
-@article{okumura2022priority,
-title = {Priority Inheritance with Backtracking for Iterative Multi-agent Path Finding},
-journal = {Artificial Intelligence},
-pages = {103752},
-year = {2022},
-issn = {0004-3702},
-doi = {https://doi.org/10.1016/j.artint.2022.103752},
-author = {Keisuke Okumura and Manao Machida and Xavier Défago and Yasumasa Tamura},
-}
-```
+- pibt2: The System Under Test (SUT), which is provided by a recent work: Keisuke Okumura, Manao Machida, Xavier Défago, Yasumasa Tamura. Priority inheritance with backtracking for iterative multi-agent path finding. Artificial Intelligence, Volume 310, 2022.
+- 
 Note that, their code, realizing the MAPF system and benchmark PIBT algorithms, is open-source and can be achieved at
 https://kei18.github.io/pibt2/
 
