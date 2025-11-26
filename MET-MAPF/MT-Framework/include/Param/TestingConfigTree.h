@@ -80,7 +80,7 @@ namespace TestingFramework {
         string input_args;
         string output_args;
         shared_ptr<IMetamorphicRelation> relation_ptr;   //!< 数据源来自MR_RelationGroup
-        bool is_legal_execution;
+        bool is_legal_execution = false;
         MR_TestCase(const string &args, const shared_ptr<IMetamorphicRelation> &relationPtr);
 
 //        void generateTestCase(string &input_args) {
