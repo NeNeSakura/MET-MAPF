@@ -108,6 +108,9 @@ Also, running the benchmark MAPF system requires some additional dependencies fr
 **Note:** 
 The cloned pibt2 project hold the ***openFramework*** as submodule, so ***OF*** is the address of the submodule folder.
 
+
+
+
 # 4. Compile 
 The code is compiled by clang++ 10.0.0
 
@@ -137,6 +140,38 @@ The code is compiled by clang++ 10.0.0
     cd visualizer
     make build
     ```
+
+
+## Troubleshooting Compilation (Boost Version Issues)
+
+If you encounter compilation errors related to `boost::process` (common on distributions with newer Boost versions like Manjaro or Arch Linux), you may need to manually update the include paths in `MT-Framework/src/MAPF/Execution/MAPF_Execution.cpp`.
+
+**Error Symptom:**
+Errors indicating `boost::process::v1` is undefined or header files are missing.
+
+**Manual Fix:**
+Please apply the following changes to `MT-Framework/src/MAPF/Execution/MAPF_Execution.cpp`:
+
+1.  Use the specific `v1` headers.
+2.  Update the namespace alias.
+
+```cpp
+// In MT-Framework/src/MAPF/Execution/MAPF_Execution.cpp
+
+// --- CHANGE FROM ---
+#include <boost/process.hpp>
+// ...
+namespace bp = ::boost::process;
+
+// --- TO ---
+
+#include <boost/process/v1/io.hpp>
+#include <boost/process/v1/child.hpp>
+#include <boost/process/v1/search_path.hpp>
+...
+namespace bp = ::boost::process::v1;
+
+```
 
 
 # 5. Execution
